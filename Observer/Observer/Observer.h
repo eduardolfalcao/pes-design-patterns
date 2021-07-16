@@ -6,14 +6,15 @@ class Subject;
 
 template <typename T>
 class Observer {
-public:
-    string id;
+public: 
 
     virtual void assinar(Subject<T>* subject);
     virtual void cancelarAssinatura();
-    virtual void atualizar();
+    virtual void atualizar(T info);
+    virtual string getId();
 
 protected:
     Subject<T>* subject;
     T info;
+    string id;
 };

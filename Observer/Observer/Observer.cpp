@@ -15,6 +15,11 @@ void Observer<T>::cancelarAssinatura() {
 }
 
 template <typename T>
-void Observer<T>::atualizar() {
-    this->info = this->subject->obterInfo();
+void Observer<T>::atualizar(T info) {
+    this->info = info;
+}
+
+template <typename T>
+string Observer<T>::getId() {
+    return this->id;
 }

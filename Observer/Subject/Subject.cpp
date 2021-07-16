@@ -12,7 +12,7 @@ template <typename T>
 void Subject<T>::cancelarAssinatura(Observer<T>* obs) {
     typename list<Observer<T>*>::const_iterator it = observadores.cbegin();
     while (it != observadores.cend()){
-        if ((*it)->id == obs->id) {
+        if ((*it)->getId() == obs->getId()) {
             it = observadores.erase(it);
         }
         else {
@@ -21,11 +21,22 @@ void Subject<T>::cancelarAssinatura(Observer<T>* obs) {
     }
 }
 
-template <typename T>
+//pull model
+/*template <typename T>
 void Subject<T>::notificarObservadores(){
     typename list<Observer<T> *>::iterator it = observadores.begin();
     while (it != observadores.end()) {
         (*it)->atualizar();
+        ++it;
+    }
+}*/
+
+//push model
+template <typename T>
+void Subject<T>::notificarObservadores(){
+    typename list<Observer<T> *>::iterator it = observadores.begin();
+    while (it != observadores.end()) {
+        (*it)->atualizar(this->info);
         ++it;
     }
 }

@@ -14,7 +14,7 @@ public:
     virtual void assinar(Observer<T>* obs);             //subscribe ou register
     virtual void cancelarAssinatura(Observer<T>* obs);  //unsubscribe
     virtual void notificarObservadores();               //notifyObservers
-    T obterInfo() { return info; }
+    //T obterInfo() { return info; }
 
 protected:
     T info;

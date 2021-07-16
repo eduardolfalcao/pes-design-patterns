@@ -11,13 +11,9 @@ public:
         this->id = id;
     }
 
-    void atualizar() override {
-        Observer::atualizar();
+    void atualizar(string info) override {
+        Observer::atualizar(info);
         cout << toString() << endl;
-    }
-
-    string getId() {
-        return id;
     }
 
     string toString() {
