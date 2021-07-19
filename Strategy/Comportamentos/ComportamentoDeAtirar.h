@@ -2,7 +2,7 @@
 
 class Lutador;
 
-class Atirador {
+class ComportamentoDeAtirar {
 public:
     virtual void atirar(Lutador* l) = 0;
 };

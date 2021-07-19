@@ -2,22 +2,29 @@
 #include <stdlib.h>
 #include <time.h>
 
+#include "Comportamentos/AtirarComArcoEFlecha.cpp"
+#include "Comportamentos/LancarRaio.cpp"
+
 #include "Lutadores/Lutador.h"
 #include "Lutadores/NightWolf.cpp"
 #include "Lutadores/Rayden.cpp"
 #include "Lutadores/SubZero.cpp"
 #include "Lutadores/Sonia.cpp"
+#include "Lutadores/Scorpion.cpp"
+#include "Lutadores/ShangTsun.cpp"
 
 
 Lutador* sorteiaLutador() {
     Lutador* lutador;
     int v = rand() % 100 + 1;
-    if (v <= 25) 
+    if (v <= 20) 
         lutador = new NightWolf();
-    else if (v <= 50)
+    else if (v <= 40)
         lutador = new Rayden();
-    else if (v <= 75)
+    else if (v <= 60)
         lutador = new SubZero();
+    else if (v <= 80)
+        lutador = new Scorpion();
     else
         lutador = new Sonia();    
     return lutador;
@@ -52,11 +59,17 @@ void golpear(Lutador* atacando, Lutador* apanhando) {
 int main(){
     srand(time(NULL));
 
-    Lutador* l1 = sorteiaLutador();
+    Lutador* l1 = (Lutador*)(new ShangTsun());
     Lutador* l2 = sorteiaLutador();
 
     int round = 1;
     while (l1->getVida() > 0 && l2->getVida() > 0) {
+        if (round == 5) {
+            l1->setAtirador(new AtirarComArcoEFlecha());
+            l1->setBruxo(new LancarRaio);
+            cout << l1->toString() + "virou NightWolf" << endl;
+        }
+
         cout << "ROUND " + to_string(round) << endl;
 
         pair<Lutador*, Lutador*> lutadores = sorteiaAtacante(l1, l2);

@@ -141,7 +141,8 @@
   <ItemGroup> 
 	<ClCompile Include="Main-Strategy.cpp" />
     <ClCompile Include="Comportamentos/AtirarComArcoEFlecha.cpp" />
-    <ClCompile Include="Comportamentos/AtirarComArmaDeFogo.cpp" />   
+    <ClCompile Include="Comportamentos/AtirarComArmaDeFogo.cpp" />
+	  <ClCompile Include="Comportamentos/AtirarCorrente.cpp" />
     <ClCompile Include="Comportamentos/AtirarNada.cpp" />
     <ClCompile Include="Comportamentos/LancarBolaDeFogo.cpp" />
 	<ClCompile Include="Comportamentos/LancarBolaDeGelo.cpp" />
@@ -153,10 +154,12 @@
 	<ClCompile Include="Lutadores/SubZero.cpp" />
 	<ClCompile Include="Lutadores/Rayden.cpp" />
 	<ClCompile Include="Lutadores/Sonia.cpp" />
+	<ClCompile Include="Lutadores/Scorpion.cpp" />
+	<ClCompile Include="Lutadores/ShangTsun.cpp" />	  
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Comportamentos/Atirador.h" />
-    <ClInclude Include="Comportamentos/Bruxo.h" />
+    <ClInclude Include="Comportamentos/ComportamentoDeAtirar.h" />
+    <ClInclude Include="Comportamentos/ComportamentoBruxo.h" />
 	<ClInclude Include="Lutadores/Lutador.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

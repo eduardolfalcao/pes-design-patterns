@@ -3,12 +3,12 @@
 #include "../Lutadores/Lutador.h"
 #include <iostream>
 
-class AtirarComArcoEFlecha : public ComportamentoDeAtirar {
+class AtirarCorrente : public ComportamentoDeAtirar {
 
 public:
     void atirar(Lutador* lut) {
         int vida = lut->getVida();
         lut->setVida(vida - 15);
-        cout << "usando Arco e Flecha... " << endl;
+        cout << "usando Corrente... " << endl;
     }
 };

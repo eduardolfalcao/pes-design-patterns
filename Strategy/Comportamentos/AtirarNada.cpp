@@ -1,8 +1,8 @@
 #pragma once
-#include "Atirador.h"
+#include "ComportamentoDeAtirar.h"
 #include "../Lutadores/Lutador.h"
 
-class AtirarNada : public Atirador {
+class AtirarNada : public ComportamentoDeAtirar {
 
 public:
     void atirar(Lutador* lut) {

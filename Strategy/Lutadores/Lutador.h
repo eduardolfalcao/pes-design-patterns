@@ -1,8 +1,8 @@
 #pragma once
 #include <string>
 
-class Atirador;
-class Bruxo;
+class ComportamentoDeAtirar;
+class ComportamentoBruxo;
 
 using namespace std;
 
@@ -21,12 +21,15 @@ public:
 
     string toString();
 
+    void setAtirador(ComportamentoDeAtirar* atirador);
+    void setBruxo(ComportamentoBruxo* bruxo);
+
 protected:
     int vida;
     string nome;
 
-    Atirador* atirador;
-    Bruxo* bruxo;
+    ComportamentoDeAtirar* atirador;
+    ComportamentoBruxo* bruxo;
 
 private:
     void msgAtaque(string ataque, Lutador* lutador);

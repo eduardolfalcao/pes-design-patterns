@@ -2,7 +2,7 @@
 
 class Lutador;
 
-class Bruxo {
+class ComportamentoBruxo {
 public:
     virtual void lancarMagia(Lutador* l) = 0;
 };

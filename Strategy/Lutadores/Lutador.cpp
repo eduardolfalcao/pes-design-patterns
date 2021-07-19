@@ -1,6 +1,6 @@
 #include "Lutador.h"
-#include "../Comportamentos/Atirador.h"
-#include "../Comportamentos/Bruxo.h"
+#include "../Comportamentos/ComportamentoDeAtirar.h"
+#include "../Comportamentos/ComportamentoBruxo.h"
 #include <iostream>
 
 Lutador::Lutador() {
@@ -39,6 +39,14 @@ int Lutador::getVida() {
 
 void Lutador::setVida(int vida) {
     this->vida = vida;
+}
+
+void Lutador::setAtirador(ComportamentoDeAtirar* atirador) {
+    this->atirador = atirador;
+}
+
+void Lutador::setBruxo(ComportamentoBruxo* bruxo) {
+    this->bruxo = bruxo;
 }
 
 string Lutador::getNome() {
